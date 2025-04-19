@@ -7,9 +7,9 @@
             Établissements de Santé Communautaire (CNA-ESCOM)
         </p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61573917903934" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/ouattara-clement-24447a355/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.youtube.com/@CNA-ESCOM-CI" class="instagram"><i class="bi bi-youtube"></i></a> 
       </div>
       <div class="container">
         <div class="copyright">
