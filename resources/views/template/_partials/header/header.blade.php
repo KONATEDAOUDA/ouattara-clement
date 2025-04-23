@@ -4,22 +4,22 @@
       <a href="{{ route('home') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{{ asset('assets/img/logo.png') }}" alt="">
-        <h1 class="sitename">PCA</h1>
+        <h1 class="sitename text-white">PCA OUATTARA CLÉMENT</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}">Accueil</a>
+            <a style="color: antiquewhite" href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}">Accueil</a>
           </li>
           <li>
-            <a href="{{ route('about') }}" class="{{ Route::is('about') ? 'active' : '' }}">À propos</a>
+            <a style="color: antiquewhite" href="{{ route('about') }}" class="{{ Route::is('about') ? 'active' : '' }}">À propos</a>
           </li>
           <li>
-            <a href="{{ route('blog') }}" class="{{ Route::is('blog*') ? 'active' : '' }}">Actualité</a>
+            <a style="color: antiquewhite" href="{{ route('blog') }}" class="{{ Route::is('blog*') ? 'active' : '' }}">Actualité</a>
           </li>
           <li>
-            <a href="{{ route('contact') }}" class="{{ Route::is('contact') ? 'active' : '' }}">Contact</a>
+            <a style="color: antiquewhite" href="{{ route('contact') }}" class="{{ Route::is('contact') ? 'active' : '' }}">Contact</a>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

@@ -24,8 +24,10 @@
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 
-    <!-- Main CSS File -->
+    <!-- Main CSS File  <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}"> -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+
+
      <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

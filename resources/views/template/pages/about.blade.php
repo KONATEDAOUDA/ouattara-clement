@@ -5,107 +5,107 @@
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
-        <nav style="margin: 70px;" class="breadcrumbs">
+        <nav class="breadcrumbs">
             <div class="container">
-            <ol>
-                <li><a href="{{route('home')}}">Accueil</a></li>
-                <li class="current">À propos</li>
-            </ol>
+                <ol>
+                    <li><a href="{{ route('home') }}">Accueil</a></li>
+                    <li class="current">À propos</li>
+                </ol>
             </div>
         </nav>
     </div><!-- End Page Title -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section style="padding-top: 1px" id="about" class="about section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
             <div class="row gy-4 justify-content-center">
-            <div class="col-lg-4">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+                <div class="col-lg-4">
+                    <img src="{{ asset('assets/img/profile-img.jpg') }}" style="width: 70%;" class="img-fluid" alt="Portrait de OUATTARA Clément">
+                </div>
+                <div class="col-lg-8 content">
+                    <h2>PCA OUATTARA CLÉMENT</h2>
+                    <p class="fst-italic py-3">
+                        PCA OUATTARA Clément, un visionnaire autodidacte, s'est forgé une réputation inégalée en tant
+                        que leader charismatique et innovant dans le domaine de la santé communautaire en Côte d'Ivoire.
+                        Sa passion pour l'amélioration des soins de santé de proximité l'a conduit à établir
+                        la Confédération Nationale des Établissements de Santé Communautaire (CNA-ESCOM),
+                        une organisation vouée à la transformation et à l'optimisation des structures sanitaires locales.
+                        À travers ses initiatives audacieuses et son dévouement sans faille,
+                        il s'est affirmé comme une figure incontournable dans la structuration
+                        et le pilotage efficace des établissements de santé communautaire.
+                        Son approche unique, alliant humanité, modernité et accessibilité,
+                        assure que chaque individu, indépendamment de son statut social ou économique,
+                        ait accès à des soins de qualité. En promouvant l'innovation technologique et en collaborant
+                        avec divers partenaires locaux et internationaux, PCA OUATTARA Clément continue de
+                        révolutionner le paysage sanitaire ivoirien, garantissant ainsi un avenir plus sain et
+                        plus équitable pour tous les citoyens.
+                    </p>
+                </div>
             </div>
-            <div class="col-lg-8 content">
-                <h2>PCA OUATTARA CLEMENT</h2>
-                <p class="fst-italic py-3">
-                    PCA OUATTARA Clément est un acteur engagé dans le développement de la santé
-                    communautaire en Côte d’Ivoire. Fondateur de la Confédération Nationale des
-                    Établissements de Santé Communautaire (CNA-ESCOM), il œuvre depuis plusieurs
-                    années pour un accès équitable aux soins de santé et l’amélioration des structures
-                    médicales de proximité.
-                </p>
-            </div>
-            </div>
-
         </div>
     </section><!-- /About Section -->
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
         <div class="container">
+            <div class="row">
+                <!-- Colonne Gauche -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="resume-title">Résumé</h3>
+                    <div class="resume-item pb-0">
+                        <h4>OUATTARA Clément</h4>
+                        <p>
+                            <em>
+                                Manager autodidacte, OUATTARA Clément est un pionnier de la santé communautaire en Côte d’Ivoire.
+                                 Il s’est illustré par sa capacité à fédérer des établissements sanitaires autour d’une vision commune
+                                 : rendre les soins accessibles, durables et de qualité.
+                                Doté d’un sens aigu de l’organisation, il assure la coordination stratégique,
+                                 humaine et administrative de l’ensemble du réseau CNA-ESCOM.
+                            </em>
+                        </p>
+                        <ul>
+                            <li>Abidjan, Côte d’Ivoire</li>
+                            <li>(+225) 07 58 13 61 88</li>
+                            <li>socialmedia@cna-escom.ci</li>
+                        </ul>
+                    </div>
 
-        <div class="row">
+                    <h3 class="resume-title">Formation & Certifications</h3>
+                    <div class="resume-item">
+                        <h4>Management des organisations de santé</h4>
+                        <h5>2008 - 2010</h5>
+                        <p><em>Institut National de Santé Publique (INSP), Côte d’Ivoire</em></p>
+                        <p>Spécialisation dans la gestion des structures sanitaires communautaires et le pilotage stratégique des projets de santé publique.</p>
+                    </div>
+                </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
+                <!-- Colonne Droite -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="resume-title">Expérience Professionnelle</h3>
+                    <div class="resume-item">
+                        <h4>Fondateur & Président du Conseil d’Administration</h4>
+                        <h5>Depuis 2017</h5>
+                        <p><em>Confédération Nationale des Établissements de Santé Communautaire (CNA-ESCOM)</em></p>
+                        <ul>
+                            <li>Mise en réseau de plus de 40 établissements de santé communautaire à travers la Côte d’Ivoire.</li>
+                            <li>Développement de stratégies pour l’amélioration de la qualité des soins et la formation continue des personnels de santé.</li>
+                            <li>Promotion de l’innovation technologique en milieu sanitaire : digitalisation des dossiers, téléconsultation, systèmes d’alerte SMS, etc.</li>
+                            <li>Représentation institutionnelle auprès des partenaires publics et internationaux.</li>
+                        </ul>
+                    </div>
 
-            <div class="resume-item pb-0">
-                <h4>Brandon Johnson</h4>
-                <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-                <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-                </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-                <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                <h5>2015 - 2016</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-                <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                <h5>2010 - 2014</h5>
-                <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-            </div><!-- Edn Resume Item -->
-
+                    <div class="resume-item">
+                        <h4>Consultant & Formateur en Santé Communautaire</h4>
+                        <h5>2012 - 2016</h5>
+                        <p><em>Organisations nationales et ONG partenaires</em></p>
+                        <ul>
+                            <li>Formation de cadres sanitaires sur les questions de gouvernance et de participation communautaire.</li>
+                            <li>Élaboration de guides et politiques internes pour les centres de santé urbains et ruraux.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-                <h4>Senior graphic design specialist</h4>
-                <h5>2019 - Present</h5>
-                <p><em>Experion, New York, NY </em></p>
-                <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-                </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-                <h4>Graphic design specialist</h4>
-                <h5>2017 - 2018</h5>
-                <p><em>Stepping Stone Advertising, New York, NY</em></p>
-                <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-                </ul>
-            </div><!-- Edn Resume Item -->
-
-            </div>
-
-        </div>
-
         </div>
     </section><!-- /Resume Section -->
 </main>
 @endsection
-

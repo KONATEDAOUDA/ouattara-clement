@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <nav class="breadcrumbs">
+    <nav style = "margin: 5px;" class="breadcrumbs">
       <div class="container">
         <ol>
           <li><a href="{{ route('home') }}">Accueil</a></li>
@@ -29,7 +29,7 @@
   </div><!-- End Page Title -->
 
   <!-- Contact Section -->
-  <section id="contact" class="contact section">
+  <section style="padding-top: 1px" id="contact" class="contact section">
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 

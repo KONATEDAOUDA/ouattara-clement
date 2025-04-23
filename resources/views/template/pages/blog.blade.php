@@ -6,7 +6,7 @@
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
-      <nav style="margin: 70px;" class="breadcrumbs">
+      <nav class="breadcrumbs">
         <div class="container">
           <ol>
             <li><a href="{{route('home')}}">Accueil</a></li>
@@ -17,7 +17,7 @@
     </div><!-- End Page Title -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section style="padding-top: 1px" id="portfolio" class="portfolio section">
 
       <div class="container">
 
@@ -32,7 +32,7 @@
                     <a href="{{ route('blog', ['category' => $category->id]) }}">{{ $category->name }}</a>
                   </li>
                 @endforeach
-              </ul>              
+              </ul>
 
             <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                 @foreach ($posts as $post)
@@ -66,11 +66,11 @@
             <div class="mt-6">
                 {{ $posts->appends(['category' => $category_id])->links() }}
             </div>
-            
+
         </div>
 
       </div>
-      
+
     </section><!-- /Portfolio Section -->
 
 </main>

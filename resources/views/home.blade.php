@@ -3,15 +3,15 @@
 @section('body')
 <main class="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section">
 
         <img src="assets/img/ouattara_clement.png" alt="" data-aos="fade-in">
 
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h2>OUATTARA CLEMENT</h2>
-        <p>
+        <h2 class="text-white">OUATTARA CLEMENT</h2>
+        <p class="text-white">
             Président
-        <span class="typed" data-typed-items="Fondateur de la Confédération Nationale des
+        <span class="typed text-white" data-typed-items="Fondateur de la Confédération Nationale des
             Établissements de Santé Communautaire (CNA-ESCOM)">
             </span><span class="typed-cursor typed-cursor--blink"></span>
         </p>
