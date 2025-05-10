@@ -16,6 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
+                        {{ __('Articles') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
+                        {{ __('Catégories') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('blog')">
                         {{ __('Actualité') }}
                     </x-nav-link>

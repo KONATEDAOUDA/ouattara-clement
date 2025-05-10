@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Mews\Purifier\Facades\Purifier;
 
 class PostController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, Post $post)
     {
+        $post->content = $this->formatQuillContent($post->content);
+       
         $categories = Category::all();
         $category_id = $request->category;
 
@@ -26,8 +29,10 @@ class PostController extends Controller
         return view('template.posts.create', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Post $post)
     {
+        $post->content = $this->formatQuillContent($post->content);
+       
         $request->validate([
             'title' => 'required|string|max:255',
             'category_id' => 'required|exists:categories,id',
@@ -53,6 +58,8 @@ class PostController extends Controller
 
     public function show(Request $request, Post $post)
     {
+        $post->content = $this->formatQuillContent($post->content);
+
         $category_id = $request->category;
         $posts_refer = Post::query()
             ->when($category_id, fn ($query) => $query->where('category_id', $category_id))
@@ -62,13 +69,28 @@ class PostController extends Controller
         return view('template.posts.show', compact('post', 'posts_refer', 'category_id'));
     }
 
-    public function edit(Post $post)
+    protected function formatQuillContent($content)
     {
+        // Nettoyage
+        $cleaned = Purifier::clean($content);
+        
+        // Correction des paragraphes vides
+        $cleaned = str_replace('<p><br></p>', '', $cleaned);
+        
+        return $cleaned;
+    }
+
+    public function edit(Post $post,)
+    {
+        $post->content = $this->formatQuillContent($post->content);
+
         $categories = Category::all();
         return view('template.posts.edit', compact('post', 'categories'));
     }
     public function update(Request $request, Post $post)
     {
+        $post->content = $this->formatQuillContent($post->content);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required',
@@ -89,6 +111,8 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        $post->content = $this->formatQuillContent($post->content);
+        
         $post->delete();
 
         return redirect()->route('posts.index')->with('success', 'Article supprimé avec succès.');

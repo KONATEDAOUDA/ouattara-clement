@@ -1,7 +1,7 @@
-<footer id="footer" class="footer dark-background">
+<footer id="footer" class="footer bg-dark text-white mt-3">
     <div class="container">
-        <h3 class="sitename">PCA OUATTARA CLÉMENT</h3>
-        <p>
+        <h3 class="sitename oswald-322 text-white">PCA OUATTARA CLÉMENT</h3>
+        <p class="oswald-322 text-xl">
             Président,
             Fondateur de la Confédération Nationale des
             Établissements de Santé Communautaire (CNA-ESCOM)
@@ -13,9 +13,9 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">OUATTARA Clément</strong> <span>All Rights Reserved</span>
+          <span class="oswald-322">Copyright</span> <strong class="px-1 sitename oswald-322">OUATTARA Clément</strong class="oswald-322"> <span>All Rights Reserved</span>
         </div>
-        <div class="credits">
+        <div class="credits oswald-322">
           Powered by <a href="">Technology</a>
         </div>
       </div>

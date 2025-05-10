@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Purifier;
 
 class Post extends Model
 {
@@ -18,6 +19,11 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = Purifier::clean($value);
     }
 
 }

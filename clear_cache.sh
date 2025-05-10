@@ -16,10 +16,10 @@ php artisan config:clear
 echo "Nettoyage de la optimisation..."
 php artisan optimize:clear
 
-echo "Nettoyage de cache view..."
-php artisan view:clear
-
 echo "Dumper l'autoload..."
 composer dumpautoload
 
 echo "Opération terminée!"
+
+
+

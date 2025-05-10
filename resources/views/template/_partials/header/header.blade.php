@@ -4,22 +4,25 @@
       <a href="{{ route('home') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{{ asset('assets/img/logo.png') }}" alt="">
-        <h1 class="sitename text-white">PCA OUATTARA CLÉMENT</h1>
+        <h1 class="sitename text-white oswald-322">PCA OUATTARA CLÉMENT</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a style="color: antiquewhite" href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}">Accueil</a>
+            <a style="color: antiquewhite" href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}"> <strong class="oswald-322 text-xl">Accueil</strong></a>
           </li>
           <li>
-            <a style="color: antiquewhite" href="{{ route('about') }}" class="{{ Route::is('about') ? 'active' : '' }}">À propos</a>
+            <a style="color: antiquewhite" href="{{ route('blog') }}" class="{{ Route::is('blog*') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Actualité</strong></a>
           </li>
           <li>
-            <a style="color: antiquewhite" href="{{ route('blog') }}" class="{{ Route::is('blog*') ? 'active' : '' }}">Actualité</a>
+            <a style="color: antiquewhite" href="{{ route('edito') }}" class="{{ Route::is('edito*') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Éditos</strong></a>
           </li>
           <li>
-            <a style="color: antiquewhite" href="{{ route('contact') }}" class="{{ Route::is('contact') ? 'active' : '' }}">Contact</a>
+            <a style="color: antiquewhite" href="{{ route('about') }}" class="{{ Route::is('about') ? 'active' : '' }}"><strong class="oswald-322 text-xl">À propos</strong></a>
+          </li>
+          <li>
+            <a style="color: antiquewhite" href="{{ route('contact') }}" class="{{ Route::is('contact') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Contact</strong></a>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -38,12 +41,7 @@
                     </a>
                     @endif
                 @else
-                    <a
-                        href="{{ route('login') }}"
-                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
-                    >
-                        Connexion
-                    </a>
+
                 @endauth
             </nav>
         @endif

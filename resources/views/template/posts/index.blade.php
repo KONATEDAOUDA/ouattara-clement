@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-
+<div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 ">
     <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold mb-4 md:mb-0">Liste des articles</h1>
+        <h1 class="text-2xl font-bold mb-4 md:mb-0 text-white">Liste des articles</h1>
 
         <a href="{{ route('posts.create') }}" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">
             + Nouvel article
         </a>
 
         <form action="{{ route('posts.index') }}" method="GET" class="flex space-x-3">
-            <select name="category" class="border-gray-300 rounded-md shadow-sm text-sm">
+            <select name="category" style="color: black" class="border-gray-300 rounded-md shadow-sm text-sm">
                 <option value="">Toutes les catégories</option>
                 @foreach ($categories as $cat)
                     <option value="{{ $cat->id }}" {{ $category_id == $cat->id ? 'selected' : '' }}>
@@ -36,14 +35,18 @@
             @foreach ($posts as $post)
                 <div class="bg-white shadow-sm rounded p-6">
                     @if ($post->image)
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="Image" class="rounded-md w-full h-48 object-cover mb-4">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="rounded-md w-full h-48 object-cover mb-4">
                     @endif
 
                     <h2 class="text-lg font-semibold mb-2">{{ $post->title }}</h2>
                     <p class="text-sm text-gray-600 mb-2">
-                        Catégorie : <span class="font-medium">{{ $post->category->name ?? 'Sans catégorie' }}</span>
+                        Catégorie : <strong class="text-green-600">{{ $post->category->name ?? 'Sans catégorie' }}</strong>
                     </p>
-                    <p class="text-gray-700 text-sm line-clamp-3">{{ Str::limit($post->content, 120) }}</p>
+
+                    <!-- Contenu avec bonne classe prose -->
+                    <div class="prose prose-sm max-w-none text-gray-700 overflow-hidden">
+                        {!! Str::limit(strip_tags($post->content), 120) !!}
+                    </div>
 
                     <div class="mt-4 flex space-x-2">
                         <a href="{{ route('posts.edit', $post) }}" class="text-sm bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded">
@@ -67,6 +70,5 @@
     @else
         <p class="text-gray-600">Aucun article trouvé pour cette catégorie.</p>
     @endif
-
 </div>
 @endsection

@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Oswald custom weight */
+.oswald-322 {
+    font-family: 'Oswald', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 322;
+    font-style: normal;
+  }
+
