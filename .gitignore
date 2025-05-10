@@ -6,6 +6,8 @@
 /storage/*.key
 /storage/pail
 /vendor
+/clear_cache.sh
+/git-push-interactive.sh
 .env
 .env.backup
 .env.production
@@ -21,3 +23,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+
+
+
