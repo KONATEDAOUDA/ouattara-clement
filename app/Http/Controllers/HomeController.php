@@ -17,7 +17,7 @@ class HomeController extends Controller
             $posts = Post::with('category')
         ->when($category_id, fn ($query) => $query->where('category_id', $category_id))
         ->latest()
-        ->paginate(4); 
+        ->paginate(4);
 
         $posts_conf = Post::with('category')
         ->whereHas('category', fn ($query) => $query->where('name', 'Conférence'))
@@ -26,7 +26,27 @@ class HomeController extends Controller
 
         $posts_conf_id = Category::where('name', 'Conférence')->value('id');
 
-        return view('home',  compact('posts_conf', 'posts_conf_id', 'posts', 'categories', 'category_id'));
+         $posts_prix = Post::with('category')
+        ->whereHas('category', fn ($query) => $query->where('name', 'PRIX OUATTARA CLEMENT'))
+        ->latest()
+        ->take(3)
+        ->get();
+
+        $posts_distc = Post::with('category')
+        ->whereHas('category', fn ($query) => $query->where('name', 'DISTINCTION OUATTARA CLEMENT'))
+        ->latest()
+        ->take(3)
+        ->get();
+
+        return view('home',  compact(
+            'posts_conf',
+            'posts_conf_id',
+            'posts',
+            'categories',
+            'category_id',
+            'posts_prix',
+            'posts_distc'
+        ));
     }
 
     public function about()
@@ -43,7 +63,7 @@ class HomeController extends Controller
         ->take(3)
         ->get();
 
-        return view('template.pages.about', compact('posts_prix', 'posts_distc')); 
+        return view('template.pages.about', compact('posts_prix', 'posts_distc'));
     }
 
     public function blog(Request $request)

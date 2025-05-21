@@ -1,50 +1,60 @@
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header class="main-header-two">
+    <nav class="main-menu main-menu-two">
+        <div class="main-menu-two__wrapper">
+            <div class="container">
+                <div class="main-menu-two__wrapper-inner">
+                    <div class="main-menu-two__logo">
+                        <a href="{{route('home')}}"><img src="{{ asset('assets/images/pca/logo_n.png')}}" alt="PCA OUATTARA CLEMENT">
+                        </a>
+                        </a>
+                    </div>
+                    <div class="main-menu-two__right">
+                        <div class="main-menu-two__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li class="dropdown megamenu current">
+                                    <a href="{{route('home')}}">Accueil </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="{{ route('blog') }}">Actualité</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="{{ route('edito') }}">Éditos</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="{{ route('about') }}">À propos</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contact') }}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-menu-two__search-btn-box">
+                            <div class="main-menu-two__search-box">
+                            </div>
+                            <div class="main-menu-two__btn-box">
+                                <!-- Login space -->
+                                @if (Route::has('login'))
+                                    <nav class="flex items-center justify-end gap-4">
+                                        @auth
+                                            @if (auth()->check() && auth()->user()->role === 'manager_admin_role')
+                                                <a href="{{ url('/dashboard') }}" class="thm-btn main-menu-two__btn">Dashboard</a>
+                                            @endif
+                                        @else
 
-      <a href="{{ route('home') }}" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{ asset('assets/img/logo.png') }}" alt="">
-        <h1 class="sitename text-white oswald-322">PCA OUATTARA CLÉMENT</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li>
-            <a style="color: antiquewhite" href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}"> <strong class="oswald-322 text-xl">Accueil</strong></a>
-          </li>
-          <li>
-            <a style="color: antiquewhite" href="{{ route('blog') }}" class="{{ Route::is('blog*') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Actualité</strong></a>
-          </li>
-          <li>
-            <a style="color: antiquewhite" href="{{ route('edito') }}" class="{{ Route::is('edito*') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Éditos</strong></a>
-          </li>
-          <li>
-            <a style="color: antiquewhite" href="{{ route('about') }}" class="{{ Route::is('about') ? 'active' : '' }}"><strong class="oswald-322 text-xl">À propos</strong></a>
-          </li>
-          <li>
-            <a style="color: antiquewhite" href="{{ route('contact') }}" class="{{ Route::is('contact') ? 'active' : '' }}"><strong class="oswald-322 text-xl">Contact</strong></a>
-          </li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <!-- Login space -->
-        @if (Route::has('login'))
-            <nav class="flex items-center justify-end gap-4">
-                @auth
-                    @if (auth()->check() && auth()->user()->role === 'manager_admin_role')
-                    <a
-                        href="{{ url('/dashboard') }}"
-                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
-                    >
-                        Dashboard
-                    </a>
-                    @endif
-                @else
-
-                @endauth
-            </nav>
-        @endif
-      <!-- Login space -->
-    </div>
+                                        @endauth
+                                    </nav>
+                                @endif
+                                <!-- Login space -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
+
+<div class="stricky-header stricked-menu main-menu main-menu-two">
+    <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->
