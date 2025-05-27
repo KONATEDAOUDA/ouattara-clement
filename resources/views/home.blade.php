@@ -16,7 +16,7 @@
             <div class="section-title__icon">
                 <span class="fa fa-star"></span>
             </div>
-            <span class="section-title__tagline">ACTUALITÉS</span> <br>
+            <h2 class="section-title__title">ACTUALITÉS</h2>
             <strong>
                 Découvrez les actualités récentes concernant PCA OUATTARA CLÉMENT
                 <br> incluant ses activités et événements marquants.
@@ -71,7 +71,7 @@
             <div class="section-title__icon">
                 <span class="fa fa-star"></span>
             </div>
-            <span class="section-title__tagline">CONFÉRENCES</span> <br>
+            <h2 class="section-title__title">CONFÉRENCES</h2>
             <strong>
                 Découvrez les conférences récentes animées par PCA OUATTARA CLÉMENT,
                 <br>
@@ -86,7 +86,7 @@
                         <div class="news-one__img-box">
                             <div class="news-one__img">
                                 @if ($post->image)
-                                    <img style="width: 500px; height: 350px;" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
+                                    <img style="width: 500px; height: 300px;" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
                                 @endif
                             </div>
                             <div class="news-one__date">

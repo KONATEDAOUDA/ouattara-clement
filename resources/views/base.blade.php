@@ -14,7 +14,7 @@
 
     <!-- fonts -->
    <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
-   
+
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/custom-animate.css') }}" />
@@ -40,6 +40,12 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/govity.css')}}" />
     <link rel="stylesheet" href="{{ asset('assets/css/govity-responsive.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+   <script src="{{ asset('assets/js/custom.js') }}"></script>
+
 </head>
 
 <body class="custom-cursor">

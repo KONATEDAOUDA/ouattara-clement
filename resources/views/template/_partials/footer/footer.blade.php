@@ -17,7 +17,7 @@
                         </p>
                         <div class="site-footer__social">
                             <a href="https://www.facebook.com/profile.php?id=61573917903934"><i class="fab fa-facebook"></i></a>
-                           <a href="https://www.linkedin.com/in/ouattara-clement-24447a355/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/ouattara-clement-24447a355/"><i class="fab fa-linkedin"></i></a>
                             <a href="https://www.youtube.com/@CNA-ESCOM-CI"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>

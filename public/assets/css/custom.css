@@ -1,0 +1,427 @@
+/* Filtres de catégories - Style Govity */
+.post-filter-wrapper {
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.post-filter-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #00B050 50%, transparent 100%);
+}
+
+.post-filter-header {
+    margin-bottom: 10px;
+}
+
+.post-filter__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.post-filter__sub-title {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.post-filter {
+    margin: 0;
+    padding: 0;
+    gap: 3px;
+}
+
+.post-filter__item {
+    margin: 5px;
+}
+
+.post-filter__btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-filter__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.post-filter__btn:hover::before {
+    left: 100%;
+}
+
+.post-filter__btn:hover {
+    background-color: #00B050;
+    border-color: #00B050;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 176, 80, 0.3);
+}
+
+.post-filter__item.filter-active .post-filter__btn {
+    background-color: #00B050;
+    border-color: #00B050;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 176, 80, 0.4);
+}
+
+.post-filter__text {
+    font-weight: 600;
+}
+
+.post-filter__count {
+    font-size: 12px;
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-filter {
+        justify-content: center !important;
+    }
+
+    .post-filter__btn {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .post-filter__title {
+        font-size: 28px;
+    }
+}
+
+/* Animation d'entrée */
+.post-filter__item {
+    animation: filterSlideIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes filterSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Décalage d'animation pour chaque élément */
+.post-filter__item:nth-child(1) { animation-delay: 0.1s; }
+.post-filter__item:nth-child(2) { animation-delay: 0.2s; }
+.post-filter__item:nth-child(3) { animation-delay: 0.3s; }
+.post-filter__item:nth-child(4) { animation-delay: 0.4s; }
+.post-filter__item:nth-child(5) { animation-delay: 0.5s; }
+.post-filter__item:nth-child(6) { animation-delay: 0.6s; }
+
+
+ /* Styles de base pour le contenu de l'article */
+.news-sidebar__content-box {
+    font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+.news-sidebar__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1a365d;
+    text-align: left;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+/* Conteneur principal pour le contenu Quill */
+.quill-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5568;
+    text-align: justify;
+}
+
+/* Paragraphes */
+.quill-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* Titres dans le contenu */
+.quill-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: #1a365d;
+    line-height: 1.3;
+}
+
+.quill-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 1.8rem 0 1rem;
+    color: #2d3748;
+    line-height: 1.4;
+}
+
+.quill-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 1.5rem 0 0.8rem;
+    color: #2d3748;
+    line-height: 1.4;
+}
+
+/* Images */
+.quill-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.quill-content img:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Images alignées */
+.quill-content img.ql-align-left {
+    float: left;
+    margin: 0.5rem 1.5rem 1rem 0;
+    max-width: 45%;
+}
+
+.quill-content img.ql-align-right {
+    float: right;
+    margin: 0.5rem 0 1rem 1.5rem;
+    max-width: 45%;
+}
+
+.quill-content img.ql-align-center {
+    display: block;
+    margin: 2rem auto;
+    float: none;
+}
+
+/* Texte en gras et italique */
+.quill-content strong,
+.quill-content b {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.quill-content em,
+.quill-content i {
+    font-style: italic;
+}
+
+/* Listes */
+.quill-content ul,
+.quill-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    color: #4a5568;
+}
+
+.quill-content ul li,
+.quill-content ol li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.quill-content ul {
+    list-style-type: disc;
+}
+
+.quill-content ol {
+    list-style-type: decimal;
+}
+
+/* Citations */
+.quill-content blockquote {
+    border-left: 4px solid #0066cc;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background-color: #f7fafc;
+    border-radius: 4px;
+    font-style: italic;
+    color: #2d3748;
+}
+
+/* Liens */
+.quill-content a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.quill-content a:hover {
+    color: #0052a3;
+    border-bottom-color: #0052a3;
+}
+
+/* Code */
+.quill-content code {
+    background-color: #f7fafc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    color: #d53f8c;
+}
+
+.quill-content pre {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.quill-content pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* Tableaux */
+.quill-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95em;
+}
+
+.quill-content table th,
+.quill-content table td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.quill-content table th {
+    background-color: #f7fafc;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.quill-content table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+/* Vidéos */
+.quill-content .ql-video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ligne horizontale */
+.quill-content hr {
+    border: none;
+    border-top: 2px solid #e2e8f0;
+    margin: 2rem 0;
+}
+
+/* Classes d'alignement de texte */
+.quill-content .ql-align-center {
+    text-align: center;
+}
+
+.quill-content .ql-align-right {
+    text-align: right;
+}
+
+.quill-content .ql-align-justify {
+    text-align: justify;
+}
+
+/* Classes de taille */
+.quill-content .ql-size-small {
+    font-size: 0.85em;
+}
+
+.quill-content .ql-size-large {
+    font-size: 1.25em;
+}
+
+.quill-content .ql-size-huge {
+    font-size: 1.5em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .news-sidebar__title {
+        font-size: 24px;
+    }
+
+    .quill-content {
+        font-size: 15px;
+    }
+
+    .quill-content h1 {
+        font-size: 24px;
+    }
+
+    .quill-content h2 {
+        font-size: 20px;
+    }
+
+    .quill-content h3 {
+        font-size: 18px;
+    }
+
+    .quill-content img.ql-align-left,
+    .quill-content img.ql-align-right {
+        float: none;
+        display: block;
+        margin: 1.5rem auto;
+        max-width: 100%;
+    }
+
+    .quill-content ul,
+    .quill-content ol {
+        padding-left: 1.5rem;
+    }
+}
+
+/* Animation de chargement pour les images */
+.quill-content img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.quill-content img.loaded {
+    opacity: 1;
+}

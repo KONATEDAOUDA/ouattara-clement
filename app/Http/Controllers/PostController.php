@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index(Request $request, Post $post)
     {
         $post->content = $this->formatQuillContent($post->content);
-       
+
         $categories = Category::all();
         $category_id = $request->category;
 
@@ -32,7 +32,7 @@ class PostController extends Controller
     public function store(Request $request, Post $post)
     {
         $post->content = $this->formatQuillContent($post->content);
-       
+
         $request->validate([
             'title' => 'required|string|max:255',
             'category_id' => 'required|exists:categories,id',
@@ -59,24 +59,54 @@ class PostController extends Controller
     public function show(Request $request, Post $post)
     {
         $post->content = $this->formatQuillContent($post->content);
-
+        $categories = Category::all();
         $category_id = $request->category;
+        $posts = Post::with('category')
+            ->when($category_id, fn ($query) => $query->where('category_id', $category_id))
+            ->latest()
+            ->paginate(4);
+
+        $posts_distc = Post::with('category')
+            ->whereHas('category', fn ($query) => $query->where('name', 'DISTINCTION OUATTARA CLEMENT'))
+            ->latest()
+            ->take(3)
+            ->get();
+
+        $posts_prix = Post::with('category')
+            ->whereHas('category', fn ($query) => $query->where('name', 'PRIX OUATTARA CLEMENT'))
+            ->latest()
+            ->take(3)
+            ->get();
+
         $posts_refer = Post::query()
             ->when($category_id, fn ($query) => $query->where('category_id', $category_id))
             ->latest()
             ->paginate(3); // 3 derniers articles la pages detail
+        $posts_conf = Post::with('category')
+            ->whereHas('category', fn ($query) => $query->where('name', 'Conférence'))
+            ->latest()
+            ->paginate(4); // Paginer pour éviter la surcharge
 
-        return view('template.posts.show', compact('post', 'posts_refer', 'category_id'));
+        return view('template.posts.show', compact(
+            'post',
+            'posts_refer',
+            'category_id',
+            'posts',
+            'posts_prix',
+            'posts_distc',
+            'posts_conf',
+            'categories'
+        ));
     }
 
     protected function formatQuillContent($content)
     {
         // Nettoyage
         $cleaned = Purifier::clean($content);
-        
+
         // Correction des paragraphes vides
         $cleaned = str_replace('<p><br></p>', '', $cleaned);
-        
+
         return $cleaned;
     }
 
@@ -112,7 +142,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->content = $this->formatQuillContent($post->content);
-        
+
         $post->delete();
 
         return redirect()->route('posts.index')->with('success', 'Article supprimé avec succès.');

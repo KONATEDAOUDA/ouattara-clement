@@ -1,87 +1,80 @@
 @extends('base')
 
 @section('body')
+<!--News Page Start-->
+<section class="news-page" style="padding-top: 20px">
 
-<main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <nav class="breadcrumbs">
+    <div class="post-filter-wrapper" style="padding-top: 100px; padding-bottom: 5px;">
         <div class="container">
-          <ol>
-            <li class="oswald-322"><a href="{{route('home')}}">Accueil</a></li>
-            <li class="current oswald-322">Blog d’actualité</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+            <div class="post-filter-header text-center" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="post-filter__title">Explorez mes actualités</h3>
+                <p class="post-filter__sub-title">Découvrez les actualités par catégorie</p>
+            </div>
 
-    <!-- Portfolio Section -->
-    <section style="padding-top: 20px" id="portfolio" class="portfolio section">
-      <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-            <ul class="portfolio-filters isotope-filters  bg-dark text-white" data-aos="fade-up" data-aos-delay="100">
-                <li class="{{ request('category') ? '' : 'filter-active' }}">
-                  <a href="{{ route('blog') }}"> <strong class="oswald-322 text-2xl">Tous</strong></a>
+            {{-- Boutons par catégorie --}}
+            <ul class="post-filter list-unstyled d-flex justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="200">
+                {{-- Bouton "Tous" --}}
+                <li class="post-filter__item {{ request('category') ? '' : 'filter-active' }}" data-filter="*">
+                    <a href="{{ route('blog') }}" class="post-filter__btn" onclick="javascript:window.location.href='{{ route('blog') }}'">
+                        <span class="post-filter__text">Tous</span>
+                    </a>
                 </li>
-                @foreach ($categories as $category)
-                  @if (!in_array($category->name, ['Édito', 'PRIX OUATTARA CLEMENT', 'DISTINCTION OUATTARA CLEMENT']))
-                    <li class="{{ request('category') == $category->id ? 'filter-active' : '' }}">
-                      <a href="{{ route('blog', ['category' => $category->id]) }}"><strong class="oswald-322 text-2xl" >{{ $category->name }}</strong></a>
-                    </li>
-                  @endif
-                @endforeach
-              </ul>
 
-            <div class="row gy-4  isotope-container" data-aos="fade-up" data-aos-delay="200">
-                @foreach ($posts as $post)
-                <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-app">
-                    <div class="portfolio-content h-300">
-                        @if ($post->image)
-                            <div class="img-wrapper" style="height: 200px; width: 300px; overflow: hidden;">
-                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="img-fluid" style="height: 100%; width: 100%; object-fit: cover;">
-                            </div>
-                        @endif
-                        <div class="portfolio-info">
-                            <h4 class="oswald-322">{{ $post->title }}</h4>
-                            <p class="oswald-322">{{ $post->category->name ?? 'Sans catégorie' }}</p>
-                            @if ($post->image)
-                                <a href="{{ asset('storage/' . $post->image) }}" title="{{ $post->title }}" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
-                                    <i class="bi bi-zoom-in"></i>
-                                </a>
-                            @endif
-                            <a href="{{ route('posts.show', $post) }}" title="Voir plus" class="details-link oswald-322">
-                                <i class="bi bi-link-45deg"></i>
+                {{-- Boutons par catégorie --}}
+                @foreach ($categories as $category)
+                    @if (!in_array($category->name, ['Édito', 'PRIX OUATTARA CLEMENT', 'DISTINCTION OUATTARA CLEMENT']))
+                        <li class="post-filter__item {{ request('category') == $category->id ? 'filter-active' : '' }}" data-filter=".category-{{ $category->id }}">
+                            <a href="{{ route('blog', ['category' => $category->id]) }}" class="post-filter__btn" onclick="javascript:window.location.href='{{ route('blog', ['category' => $category->id]) }}'">
+                                <span class="post-filter__text">{{ $category->name }}</span>
+                                <span class="post-filter__count">({{ $category->posts_count ?? $category->posts->count() }})</span>
                             </a>
+                        </li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            @foreach ($posts as $post)
+                <div class="col-xl-4 col-lg-4">
+                    <div class="news-one__single">
+                        <div class="news-one__img-box">
+                            <div class="news-one__img">
+                                <img style="width: 500px; height: 300px; object-fit: cover;" src="{{ asset('storage/' . $post->image) }}" alt="{{ Str::limit(strip_tags($post->title), 20) }}">
+                            </div>
+                            <div class="news-one__date">
+                                <p>{{ $post->created_at->format('d') }} <br> {{ $post->created_at->translatedFormat('F') }}</p>
+                            </div>
+                        </div>
+                        <div class="news-one__content">
+                            <div class="news-one__user-and-meta">
+                                <div class="news-one__meta">
+                                    <div class="icon">
+                                        <span class="fas fa-newspaper"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p> <strong> {{ $post->category->name ?? 'Sans catégorie' }}</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="news-one__title"><a href="{{ route('posts.show', $post) }}">
+                                    {{ Str::limit(strip_tags($post->title), 20) }}
+                                </a>
+                            </h3>
+                            <div class="news-one__btn">
+                                <a href="{{ route('posts.show', $post) }}">En savoir plus<i class="icon-right-arrow"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             @endforeach
-            </div><!-- End Portfolio Container -->
-
-            <div class="mt-6" style="float: right">
-                @if ($posts->hasPages())
-                    <ul class="pagination">
-                        @if (!$posts->onFirstPage())
-                            <li class="page-item"><a class="page-link" href="{{ $posts->previousPageUrl() }}">&lsaquo;</a></li>
-                        @endif
-                        @foreach ($posts->links()->elements as $element)
-                            @foreach ($element as $page => $url)
-                                @if ($page == $posts->currentPage())
-                                    <li class="page-item active"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                                @else
-                                    <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                                @endif
-                            @endforeach
-                        @endforeach
-                        @if ($posts->hasMorePages())
-                            <li class="page-item"><a class="page-link" href="{{ $posts->nextPageUrl() }}">&rsaquo;</a></li>
-                        @endif
-                    </ul>
-                @endif
-            </div>
         </div>
-      </div>
-    </section><!-- /Portfolio Section -->
-</main>
+         <div class="mt-6">
+            {{ $posts->appends(['category' => $category_id])->links() }}
+        </div>
+    </div>
+</section>
+  <!--News Page End-->
 @endsection
