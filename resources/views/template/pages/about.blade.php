@@ -153,7 +153,7 @@
                 <li>
                     <div class="counter-one__count">
                         <h3 class="odometer" data-count="124">00</h3>
-                        <span class="">M</span>
+                        <span class="">mille</span>
                     </div>
                     <p class="counter-one__text">
                         Naissances accompagnées
@@ -331,10 +331,100 @@
             </div>
         </div>
     </div>
-    <div class="department-two__bottom-text">
-        <p><strong>PCA OUATTARA CLÉMENT</strong>, Président de Confédération Nationale AESCOM-CI</p>
-    </div>
 </section>
 <!--Event Two End-->
 
+ <!--Department Two Start-->
+<section class="department-two pt-5" id="departments">
+    <div class="department-two__bg-one"
+        style="background-image: url(assets/images/backgrounds/department-two-bg-1.png);"></div>
+    <div class="department-two__bg-two"
+        style="background-image: url(assets/images/backgrounds/department-two-bg-2.png);"></div>
+    <div class="container">
+        <div class="section-title text-center">
+            <div class="section-title__icon">
+                <span class="fa fa-star"></span>
+            </div>
+            <span class="section-title__tagline">MES DISTINCTIONS</span>
+            <br>
+            <strong>
+                Découvrez mes distinctions à travers une sélection de titres marquants.
+            </strong>
+        </div>
+        <div class="row">
+            <!--Department Two Single Start-->
+            @foreach ($posts_distinction as $post)
+                <div class="col-xl-4 col-lg-4">
+                    <div class="department-two__single">
+                        <div class="department-two__img-box">
+                            <div class="department-two__img">
+                                <img style="width: 400px; height: 200px; object-fit: cover;" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
+                            </div>
+                            <div class="department-two__content">
+                                <div class="event-two__tag">
+                                    <p>{{ $post->category->name ?? 'Distinction' }}</p>
+                                </div>
+                                <br>
+                                <h3 style="padding-top: 10px" class="department-two__title"><a href="{{ route('posts.show', $post) }}">
+                                    {{ Str::limit(strip_tags($post->title), 30) }}
+                                </a></h3>
+                                <div class="department-two__icon bg-white">
+                                    <img src="{{ asset('assets/images/icon/news-sidebar-bottom-box-icon.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <!--Department Two Single End-->
+            <div  class="text">
+                <a style="float: right" class="btn btn-primary" href="{{ route('blog', ['category' =>  $post->category->id]) }}">Voir toutes les distinctions</a>
+            </div>
+        </div>
+       <div class="section-title text-center">
+            <div class="section-title__icon">
+                <span class="fa fa-star"></span>
+            </div>
+            <span class="section-title__tagline">PRIX NATIONAUX ET INTERNATIONAUX</span>
+            <br>
+            <strong>
+                Une brève description de mes prix et distinctions à l'échelle nationale et internationale.
+            </strong>
+        </div>
+         <div class="row">
+            <!--Department Two Single Start-->
+            @foreach ($posts_prix as $post)
+                <div class="col-xl-4 col-lg-4">
+                    <div class="department-two__single">
+                        <div class="department-two__img-box">
+                            <div class="department-two__img">
+                                <img style="width: 400px; height: 200px; object-fit: cover;" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
+                            </div>
+                            <div class="department-two__content">
+                                <div class="event-two__tag">
+                                    <p>{{ $post->category->name ?? 'Prix' }}</p>
+                                </div>
+                                <br>
+                                <h3 style="padding-top: 10px" class="department-two__title"><a href="{{ route('posts.show', $post) }}">
+                                    {{ Str::limit(strip_tags($post->title), 30) }}
+                                </a></h3>
+                                <div class="department-two__icon bg-white">
+                                    <img src="{{ asset('assets/images/icon/news-sidebar-bottom-box-icon.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <!--Department Two Single End-->
+            <div  class="text">
+                <a style="float: right" class="btn btn-primary" href="{{ route('blog', ['category' =>  $post->category->id]) }}">Voir tous les prix</a>
+            </div>
+        </div>
+    </div>
+     <div class="department-two__bottom-text">
+        <p><strong>PCA OUATTARA CLÉMENT</strong>, Président de Confédération Nationale AESCOM-CI</p>
+    </div>
+</section>
+<!--Department Two End-->
 @endsection

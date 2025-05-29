@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Purifier;
 
 class Post extends Model
@@ -24,6 +25,24 @@ class Post extends Model
     public function setContentAttribute($value)
     {
         $this->attributes['content'] = Purifier::clean($value);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($post) {
+            $post->slug = Str::slug($post->title);
+        });
+
+        static::updating(function ($post) {
+            $post->slug = Str::slug($post->title);
+        });
     }
 
 }

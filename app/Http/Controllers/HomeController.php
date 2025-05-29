@@ -108,7 +108,7 @@ class HomeController extends Controller
         $posts = Post::with('category')
             ->when($category_id, fn ($query) => $query->where('category_id', $category_id))
             ->latest()
-            ->paginate(6);
+            ->paginate(12);
 
         $posts_conf = Post::with('category')
             ->whereHas('category', fn ($query) => $query->where('name', 'Conférence'))

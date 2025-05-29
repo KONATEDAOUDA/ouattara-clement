@@ -153,23 +153,6 @@
     });
   }
 
-
-
-
-  if ($("#datepicker").length) {
-    $("#datepicker").datepicker();
-  }
-
-  if ($("#datepicker2").length) {
-    $("#datepicker2").datepicker();
-  }
-
-  if ($("#datepicker-inline").length) {
-    $("#datepicker-inline").datepicker();
-  }
-
-  $('input[name="time"]').ptTimeSelect();
-
   if ($(".banner-bg-slide").length) {
     $(".banner-bg-slide").each(function () {
       var Self = $(this);
@@ -310,77 +293,6 @@
       );
 
       return false;
-    });
-  }
-
-
-  if ($(".contact-form-validated").length) {
-    $(".contact-form-validated").validate({
-      // initialize the plugin
-      rules: {
-        name: {
-          required: true
-        },
-        email: {
-          required: true,
-          email: true
-        },
-        message: {
-          required: true
-        },
-        subject: {
-          required: true
-        }
-      },
-      submitHandler: function (form) {
-        // sending value with ajax request
-        $.post(
-          $(form).attr("action"),
-          $(form).serialize(),
-          function (response) {
-            $(form).parent().find(".result").append(response);
-            $(form).find('input[type="text"]').val("");
-            $(form).find('input[type="email"]').val("");
-            $(form).find("textarea").val("");
-          }
-        );
-        return false;
-      }
-    });
-  }
-
-  // mailchimp form
-  if ($(".mc-form").length) {
-    $(".mc-form").each(function () {
-      var Self = $(this);
-      var mcURL = Self.data("url");
-      var mcResp = Self.parent().find(".mc-form__response");
-
-      Self.ajaxChimp({
-        url: mcURL,
-        callback: function (resp) {
-          // appending response
-          mcResp.append(function () {
-            return '<p class="mc-message">' + resp.msg + "</p>";
-          });
-          // making things based on response
-          if (resp.result === "success") {
-            // Do stuff
-            Self.removeClass("errored").addClass("successed");
-            mcResp.removeClass("errored").addClass("successed");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-          if (resp.result === "error") {
-            Self.removeClass("successed").addClass("errored");
-            mcResp.removeClass("successed").addClass("errored");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-        }
-      });
     });
   }
 
@@ -527,19 +439,6 @@
       live: true // act on asynchronously loaded content (default is true)
     });
     wow.init();
-  }
-
-  if ($("#donate-amount__predefined").length) {
-    let donateInput = $("#donate-amount");
-    $("#donate-amount__predefined")
-      .find("li")
-      .on("click", function (e) {
-        e.preventDefault();
-        let amount = $(this).find("a").text();
-        donateInput.val(amount);
-        $("#donate-amount__predefined").find("li").removeClass("active");
-        $(this).addClass("active");
-      });
   }
 
   if ($(".thm-accordion").length) {
@@ -743,26 +642,6 @@
           .append('<span class="count">' + count + "</span>");
       });
     }
-  }
-
-
-  // ===Checkout Payment===
-  if ($(".checkout__payment__title").length) {
-
-    $(".checkout__payment__item").find('.checkout__payment__content').hide();
-    $(".checkout__payment__item--active").find('.checkout__payment__content').show();
-
-    $(".checkout__payment__title").on("click", function (e) {
-      e.preventDefault();
-
-
-      $(this).parents('.checkout__payment').find('.checkout__payment__item').removeClass("checkout__payment__item--active");
-      $(this).parents(".checkout__payment").find(".checkout__payment__content").slideUp();
-
-      $(this).parent().addClass("checkout__payment__item--active");
-      $(this).parent().find(".checkout__payment__content").slideDown();
-
-    })
   }
 
   //Single Vertical Carousel

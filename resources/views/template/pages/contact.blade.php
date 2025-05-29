@@ -53,7 +53,7 @@
                                 <h4 class="team-details__progress-title">Leadership</h4>
                                 <div class="bar">
                                     <div class="bar-inner count-bar" data-percent="95%">
-                                        <div class="count-text">95%</div>
+                                        <div class="count-text">et action sociale</div>
                                     </div>
                                 </div>
                             </div>
@@ -61,15 +61,15 @@
                                 <h4 class="team-details__progress-title">Engagement communautaire</h4>
                                 <div class="bar">
                                     <div class="bar-inner count-bar" data-percent="90%">
-                                        <div class="count-text">90%</div>
+                                        <div class="count-text">au quotient</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="team-details__progress-single">
-                                <h4 class="team-details__progress-title">Innovation en santé</h4>
+                                <h4 class="team-details__progress-title">Innovation</h4>
                                 <div class="bar marb-0">
                                     <div class="bar-inner count-bar" data-percent="85%">
-                                        <div class="count-text">85%</div>
+                                        <div class="count-text">en santé</div>
                                     </div>
                                 </div>
                             </div>

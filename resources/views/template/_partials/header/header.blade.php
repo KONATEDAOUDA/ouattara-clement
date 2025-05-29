@@ -9,7 +9,7 @@
                         </a>
                     </div>
                     <div class="main-menu-two__right" style="margin:-10px">
-                        <div class="main-menu-two__main-menu-box">
+                        <div class="main-menu-two__main-menu-box" style="padding-right: 5px">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li class="dropdown megamenu {{ request()->routeIs('home') ? 'current' : '' }}">
@@ -39,7 +39,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="main-menu-two__search-btn-box">
+                        <div style="padding: -15px; background-color: #00B050; color: white" class="main-menu-two__search-btn-box">
                             <div class="main-menu-two__search-box">
                             </div>
                             <div>
@@ -48,7 +48,7 @@
                                     <nav>
                                         @auth
                                             @if (auth()->check() && auth()->user()->role === 'manager_admin_role')
-                                                <a style="padding: 23px; background-color: #00B050; color: white" href="{{ url('/dashboard') }}" class="main-menu-two__btn">Dashboard</a>
+                                                <a href="{{ url('/dashboard') }}" class="main-menu-two__btn">Dashboard</a>
                                             @endif
                                         @else
 

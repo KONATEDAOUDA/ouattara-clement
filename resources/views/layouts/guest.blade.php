@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('assets/images/pca/logo_pca.png') }}" class="w-20 h-20 fill-current text-gray-500" alt="">
+                    <img src="{{ asset('assets/images/pca/logo_n.png') }}" class="w-15 h-15 fill-current text-gray-500" alt="LOGO PCA OUATTARA CLÉMENT">
                 </a>
             </div>
 
