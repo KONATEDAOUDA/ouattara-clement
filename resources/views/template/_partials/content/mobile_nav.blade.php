@@ -18,16 +18,15 @@
             <a href="mailto:contact@cnaescom.ci">contact@cnaescom.ci</a>
         </li>
         <li>
-            <i class="fa fa-phone-alt"></i>
+            <i class="fa fa-home"></i>
             <a href="">Yopougon Ouassakara - Abidjan</a>
         </li>
     </ul><!-- /.mobile-nav__contact -->
     <div class="mobile-nav__top">
         <div class="mobile-nav__social">
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-facebook-square"></a>
-            <a href="#" class="fab fa-pinterest-p"></a>
-            <a href="#" class="fab fa-instagram"></a>
+            <a href="https://www.facebook.com/profile.php?id=61573917903934"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/ouattara-clement-24447a355/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@CNA-ESCOM-CI"><i class="fab fa-youtube"></i></a>
         </div><!-- /.mobile-nav__social -->
     </div><!-- /.mobile-nav__top -->
 
