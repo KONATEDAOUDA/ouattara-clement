@@ -49,6 +49,9 @@
                     </div>
 
                     <div class="mt-4 flex space-x-2">
+                         <a href="{{ route('posts.show', $post) }}}" class="text-sm bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded">
+                            Consulter
+                        </a>
                         <a href="{{ route('posts.edit', $post) }}" class="text-sm bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded">
                             Modifier
                         </a>

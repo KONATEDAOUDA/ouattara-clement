@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
     <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
-    <meta name="description" content="govity HTML 5 Template " />
+    <meta name="description" content="Site web officiel PCA OUATTARA CLÉMENT " />
 
     <!-- fonts -->
    <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">

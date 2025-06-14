@@ -42,7 +42,7 @@ class PostController extends Controller
 
         $imagePath = null;
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/posts', 'public');
+	    $imagePath = $request->file('image')->store('posts', 'public');
         }
 
         Post::create([
@@ -148,3 +148,4 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Article supprimé avec succès.');
     }
 }
+

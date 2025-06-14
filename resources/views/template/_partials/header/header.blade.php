@@ -48,10 +48,10 @@
                                     <nav>
                                         @auth
                                             @if (auth()->check() && auth()->user()->role === 'manager_admin_role')
-                                                <a href="{{ url('/dashboard') }}" class="main-menu-two__btn">Dashboard</a>
+                                                <a href="{{ url('/dashboard') }}" class="main-menu-two__btn"><strong>Dashboard</strong></a>
                                             @endif
                                         @else
-
+                                            <a href="" class="main-menu-two__btn"><strong>PCA OUATTARA CLÉMENT</strong></a>
                                         @endauth
                                     </nav>
                                 @endif

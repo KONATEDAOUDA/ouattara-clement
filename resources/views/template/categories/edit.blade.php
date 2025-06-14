@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-2xl mx-auto py-10 sm:px-6 lg:px-8">
-    <h2 class="text-xl font-semibold mb-4">Modifier la Catégorie</h2>
+    <h2 class="text-xl font-semibold mb-4 text-white">Modifier la Catégorie</h2>
 
     <form action="{{ route('categories.update', $category) }}" method="POST">
         @csrf

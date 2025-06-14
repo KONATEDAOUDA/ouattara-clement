@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-2xl mx-auto py-10 sm:px-6 lg:px-8">
-    <h2 class="text-xl font-semibold mb-4">Nouvelle Catégorie</h2>
+    <h2 class="text-xl font-semibold mb-4 text-white">Nouvelle Catégorie</h2>
 
     <form action="{{ route('categories.store') }}" method="POST">
         @csrf

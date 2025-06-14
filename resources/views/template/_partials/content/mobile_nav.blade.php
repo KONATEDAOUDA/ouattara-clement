@@ -15,11 +15,11 @@
     <ul class="mobile-nav__contact list-unstyled">
         <li>
             <i class="fa fa-envelope"></i>
-            <a href="mailto:needhelp@packageName__.com">needhelp@govity.com</a>
+            <a href="mailto:contact@cnaescom.ci">contact@cnaescom.ci</a>
         </li>
         <li>
             <i class="fa fa-phone-alt"></i>
-            <a href="tel:666-888-0000">666 888 0000</a>
+            <a href="">Yopougon Ouassakara - Abidjan</a>
         </li>
     </ul><!-- /.mobile-nav__contact -->
     <div class="mobile-nav__top">

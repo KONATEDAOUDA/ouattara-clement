@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
     <div class="mb-6 flex justify-between">
-        <h2 class="text-xl font-semibold">Liste des catégories</h2>
+        <h2 class="text-xl font-semibold text-white">Liste des catégories</h2>
         <a href="{{ route('categories.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded">+ Nouvelle Catégorie</a>
     </div>
 
@@ -11,7 +11,7 @@
         <div class="mb-4 text-green-600">{{ session('success') }}</div>
     @endif
 
-    <div class="bg-white shadow rounded">
+    <div class="bg-white shadow rounded text-gray-800">
         <table class="min-w-full">
             <thead class="bg-gray-100">
                 <tr>
